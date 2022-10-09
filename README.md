@@ -5,6 +5,9 @@ Serwis został napisany w czystym php przy użyciu styli bootstrapa.
 
 Baza danych: https://github.com/eastcause/php_blog/blob/main/aplikacja.sql
 
+Konfiguracja bazy danych w pliku:
+core/config.php
+
 # Wygląd strony:
 Strona logowania:
 ![image](https://user-images.githubusercontent.com/105230470/194773593-c7285c36-42aa-4d9f-a7d4-d20fa22cafd8.png)
