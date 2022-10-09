@@ -110,56 +110,59 @@
 
 
         <nav aria-label="Page navigation">
+            <?php if(count($rows) != 0){ ?>
+                <ul class="pagination">
 
-            <ul class="pagination">
+                    <?php if($page == 1){ ?>
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    <?php }else{ ?>
+                        <li class="page-item">
+                            <a class="page-link" href="index.php?page=1" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    <?php } ?>
 
-                <?php if($page == 1){ ?>
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                <?php }else{ ?>
-                    <li class="page-item">
-                        <a class="page-link" href="index.php?page=1" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                <?php } ?>
+                    <?php
+                        $previouspage = ($page - 1);
+                        if($previouspage != 0){
+                            echo '<li class="page-item"><a class="page-link" href="index.php?page='.$previouspage.'">'.$previouspage.'</a></li>';
+                        }
+                    ?>
 
-                <?php
-                    $previouspage = ($page - 1);
-                    if($previouspage != 0){
-                        echo '<li class="page-item"><a class="page-link" href="index.php?page='.$previouspage.'">'.$previouspage.'</a></li>';
-                    }
-                ?>
+                    <li class="page-item disabled"><a class="page-link" href="#"><?php echo $page; ?></a></li>
 
-                <li class="page-item disabled"><a class="page-link" href="#"><?php echo $page; ?></a></li>
+                    <?php
+                        $nextpage = ($page + 1);
 
-                <?php
-                    $nextpage = ($page + 1);
-
-                    if($nextpage <= $total_pages){
-                        echo '<li class="page-item"><a class="page-link" href="index.php?page='.$nextpage.'">'.$nextpage.'</a></li>';
-                    }
-                ?>
-                <?php if($page == $total_pages){ ?>
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                <?php }else{ ?>
-                    <li class="page-item">
-                        <a class="page-link" href="index.php?page=<?php echo $total_pages ?>" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                <?php }?>
+                        if($nextpage <= $total_pages){
+                            echo '<li class="page-item"><a class="page-link" href="index.php?page='.$nextpage.'">'.$nextpage.'</a></li>';
+                        }
+                    ?>
+                    <?php if($page == $total_pages){ ?>
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    <?php }else{ ?>
+                        <li class="page-item">
+                            <a class="page-link" href="index.php?page=<?php echo $total_pages ?>" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    <?php }?>
 
 
 
-            </ul>
+                </ul>
+            <?php }else{ ?>
+                <p>Brak wpisów</p>
+            <?php }?>
         </nav>
     </div>
 
