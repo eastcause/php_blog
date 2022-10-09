@@ -22,3 +22,7 @@ Strona postu 1/2:
 
 Strona postu 2/2:
 ![image](https://user-images.githubusercontent.com/105230470/194773719-0805e65a-cabc-4688-a9f1-be75a134a1d8.png)
+
+Odpowiedzi + zalogowany:
+![image](https://user-images.githubusercontent.com/105230470/194773803-09ab51d9-d78b-4fe8-be23-da794f8ec66d.png)
+
